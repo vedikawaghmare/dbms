@@ -1,0 +1,29 @@
+<!-- templates/music.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎧 Music Recommendations for your mood: {{ top_mood_icon }} {{ top_mood.title() }}</h1>
+
+        {% if tracks %}
+            <ul class="recommendation-list">
+                {% for track in tracks %}
+                    <li class="recommendation-item">
+                        <strong>{{ track[0] }}</strong><br>
+                        <a href="{{ track[1] }}" target="_blank">▶ Listen here</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No music recommendations available for this mood yet.</p>
+        {% endif %}
+
+        <a class="back-link" href="{{ url_for('survey') }}">⬅ Back to Survey</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books Recommendation</title>
+</head>
+<body>
+    <h2>Books for {{ top_mood.capitalize() }} Mood {{ top_mood_icon }}</h2>
+
+    <ul>
+        {% for book, link in books %}
+            <li><a href="{{ link }}">{{ book }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

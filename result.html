@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moodscape Results & Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Moodscape</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Mood Result Section -->
+    <div class="mood-box">
+        <h2>Your Moodscape Results</h2>
+        <h3>Dominant Mood: {{ top_mood.capitalize() }} {{ top_mood_icon }}</h3>
+    </div>
+
+    <ul class="mood-breakdown">
+        {% for mood, count in mood_scores.items() %}
+            <li class="{% if mood == top_mood %}highlight{% endif %}">
+                {{ mood.capitalize() }}: {{ count }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/survey" class="retake-link">Take Again</a>
+
+    <!-- Recommendation Section -->
+    <div class="recommendation-box">
+        <h2 class="activity-title">🎯 Choose Your Activity</h2>
+        <div class="activity-options">
+            <a href="{{ url_for('watch_movie', mood=top_mood) }}" class="activity-btn">
+                <ion-icon name="film-outline"></ion-icon>
+                Watch a Movie
+            </a>
+            <a href="{{ url_for('books', mood=top_mood) }}" class="activity-btn">
+                <ion-icon name="book-outline"></ion-icon>
+                Read a Book
+            </a>
+            <a href="{{ url_for('games', mood=top_mood) }}" class="activity-btn">
+                <ion-icon name="game-controller-outline"></ion-icon>
+                Play a Game
+            </a>
+            
+            <a href="{{ url_for('listen_music', mood=top_mood) }}" class="activity-btn">
+                <ion-icon name="musical-notes-outline"></ion-icon>
+                Listen to Music
+            </a>
+        </div>
+    </div>
+</body>
+</html>

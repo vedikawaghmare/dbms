@@ -1,0 +1,29 @@
+<!-- templates/movies.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Recommendations for your mood: {{ top_mood_icon }} {{ top_mood.title() }}</h1>
+
+        {% if movies %}
+            <ul>
+                {% for movie in movies %}
+                    <li>
+                        <strong>{{ movie[0] }}</strong><br>
+                        <a href="{{ movie[1] }}" target="_blank">Watch here</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No movies available for this mood yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('survey') }}">Back to Survey</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: url('/static/logbg1.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    color: #5d7485;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -6px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* Mood Results Box */
+.mood-box {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(121, 96, 96, 0.5);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.mood-breakdown {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    text-align: center;
+}
+
+.mood-breakdown li {
+    font-size: 1.1em;
+    margin: 6px 0;
+}
+
+.highlight {
+    background-color: #e6ffe6;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 4px 8px;
+    display: inline-block;
+}
+
+/* Retake link */
+.retake-link {
+    color: #5d7485;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.retake-link:hover {
+    text-decoration: underline;
+}
+
+/* Recommendation Box */
+.recommendation-box {
+    margin-top: 40px;
+    width: 95%;
+    max-width: 900px;
+    min-height: 400px;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(121, 96, 96, 0.5);
+    text-align: center;
+}
+
+.recommendation-box h2.activity-title {
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Activity Buttons */
+.activity-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.activity-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background-color: #5d7485;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.activity-btn:hover {
+    background-color: #46606f;
+}
+
+ion-icon {
+    font-size: 1.4em;
+}

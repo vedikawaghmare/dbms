@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Survey</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='survey.css') }}">
+</head>
+<body>
+  <header>
+    <h2 class="logo">Mood Survey</h2>
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="survey-wrapper">
+    <div class="survey-box">
+      <h2>Mood Survey</h2>
+      <form method="POST" action="/submit-survey">
+        <div class="question">
+          <label><strong>1. If your day was a weather forecast, what would it be?</strong></label>
+          <label><input type="radio" name="weather" value="sunny" required> ☀ Sunny with a chance of adventure</label>
+          <label><input type="radio" name="weather" value="rainy"> 🌧 Rainy and snuggled under a blanket</label>
+          <label><input type="radio" name="weather" value="windy"> 🌪 Wild winds and unexpected plot twists</label>
+          <label><input type="radio" name="weather" value="calm"> 🌤 Calm skies with a gentle breeze</label>
+          <label><input type="radio" name="weather" value="chilly"> ❄ Chilly but peaceful</label>
+        </div>
+
+        <div class="question">
+          <label><strong>2. You just found a magical door — which one are you walking through?</strong></label>
+          <label><input type="radio" name="door" value="carnival" required> 🎡 A carnival full of laughter and lights</label>
+          <label><input type="radio" name="door" value="spa"> 🛁 A spa with endless warm baths and silence</label>
+          <label><input type="radio" name="door" value="mountain"> 🧗 A mountain trail with epic views</label>
+          <label><input type="radio" name="door" value="library"> 📚 A cozy library where time slows down</label>
+          <label><input type="radio" name="door" value="arcade"> 🎮 A neon-lit arcade of chaos and fun</label>
+        </div>
+
+        <div class="question">
+          <label><strong>3. Which snack best describes your current vibe?</strong></label>
+          <label><input type="radio" name="snack" value="chocolate" required> 🍫 Chocolate – smooth, sweet, comforting</label>
+          <label><input type="radio" name="snack" value="spicy"> 🌶 Spicy chips – fiery and intense</label>
+          <label><input type="radio" name="snack" value="popcorn"> 🍿 Popcorn – all over the place but kind of fun</label>
+          <label><input type="radio" name="snack" value="watermelon"> 🍉 Watermelon – fresh and chill</label>
+          <label><input type="radio" name="snack" value="cupcake"> 🧁 Cupcake – sweet but a little extra</label>
+        </div>
+
+        <div class="question">
+          <label><strong>4. Your soundtrack right now would probably be…</strong></label>
+          <label><input type="radio" name="soundtrack" value="pop" required> 🎶 A bouncy pop anthem</label>
+          <label><input type="radio" name="soundtrack" value="acoustic"> 🎻 A mellow acoustic tune</label>
+          <label><input type="radio" name="soundtrack" value="orchestral"> 🥁 A dramatic orchestral piece</label>
+          <label><input type="radio" name="soundtrack" value="lofi"> 🎧 Lo-fi beats to chill/zone out</label>
+          <label><input type="radio" name="soundtrack" value="rock"> 🎸 A rock anthem full of raw energy</label>
+        </div>
+
+        <div class="question">
+          <label><strong>5. Which animal are you channeling today?</strong></label>
+          <label><input type="radio" name="animal" value="puppy" required> 🐶 An excitable puppy</label>
+          <label><input type="radio" name="animal" value="turtle"> 🐢 A laid-back turtle</label>
+          <label><input type="radio" name="animal" value="tiger"> 🐅 A focused tiger</label>
+          <label><input type="radio" name="animal" value="bird"> 🐦 A curious bird hopping around</label>
+          <label><input type="radio" name="animal" value="octopus"> 🐙 An overthinking octopus</label>
+        </div>
+
+        <button type="submit" class="btn">Show My Mood ✨</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

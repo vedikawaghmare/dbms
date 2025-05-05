@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games Recommendation</title>
+</head>
+<body>
+    <h2>Games for {{ top_mood.capitalize() }} Mood {{ top_mood_icon }}</h2>
+
+    <ul>
+        {% for game, link in games %}
+            <li><a href="{{ link }}">{{ game }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
